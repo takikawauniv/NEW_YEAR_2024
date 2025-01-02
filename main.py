@@ -1,15 +1,15 @@
 import tkinter as tk
+from pygame import mixer
 
 from PIL import Image, ImageTk
 
 
 root = tk.Tk()
+mixer.init()
 
 root.title("2:30pm")
 
 root.geometry("400x400")
-
-
 
 canvas = tk.Canvas(root, bg="white",height=400, width=400)
 
@@ -28,4 +28,8 @@ canvas.create_image(0, 0, anchor=tk.NW, image=tk_image)
 
 canvas.pack()
 
+mixer.music.load("./sound/yarimasune.mp3")
+mixer.music.play(loops=1)
+
 root.mainloop()
+
